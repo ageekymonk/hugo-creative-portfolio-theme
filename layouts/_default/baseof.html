@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-<head>{{ partial "head.html" . }}</head>
-<body>
-  <div id="all">
+  <head>{{ partial "head.html" . }}</head>
+  <body>
+    <div id="root">
       <div class="container-fluid">
-          <div class="row row-offcanvas row-offcanvas-left">
-              {{ partial "sidebar.html" . }}
-              {{ block "main" . }}
-              {{ end }}
+        <div class="row site-header">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12 top-navigation">
+                {{ partial "topnavigation.html" . }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-10 header col-md-offset-1">
+                {{ partial "header.html" . }}
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 main-content col-md-offset-1">
+            {{ partial "portfolio.html" . }}
+          </div>
+        </div>
       </div>
-  </div>
-  {{ partial "scripts.html" . }}
-</body>
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
 </html>
